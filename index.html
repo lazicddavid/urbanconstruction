@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Urban Construction — Konsalting i inženjering u oblasti gradjevinarstva. Osnovano 2011, Beograd. Nagrađivani projekti u Srbiji, Grčkoj i regionu.">
+  <meta name="keywords" content="gradjevinarstvo, rekonstrukcija, adaptacija, nadzor, Beograd, Serbia">
+  <title>Urban Construction — Building Tomorrow</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- VanillaTilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-text">URBAN</span>
+      <span class="nav__logo-sub">CONSTRUCTION</span>
+    </a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" class="nav__link">O Nama</a></li>
+      <li><a href="#services" class="nav__link">Usluge</a></li>
+      <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+      <li><a href="#awards" class="nav__link">Nagrade</a></li>
+      <li><a href="#contact" class="nav__link">Kontakt</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn--outline nav__cta">Započni Projekat</a>
+
+    <button class="nav__hamburger" id="navHamburger" aria-label="Otvori meni">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="#about">O Nama</a></li>
+      <li><a href="#services">Usluge</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#awards">Nagrade</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__line"></span>
+        <span class="hero__label">Osnovano 2011 &mdash; Beograd, Srbija</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">URBAN</span>
+        <span class="hero__title-line hero__title-line--gold">CONSTRUCTION</span>
+      </h1>
+
+      <p class="hero__tagline">Spoj ljudi i ideja</p>
+      <p class="hero__sub">Konsalting i inženjering u oblasti gradjevinarstva</p>
+
+      <div class="hero__actions">
+        <a href="#portfolio" class="btn btn--primary">
+          <span>Naši Projekti</span>
+        </a>
+        <a href="#about" class="btn btn--text">
+          <span>Saznaj Više</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+
+        <div class="about__visual">
+          <div class="about__image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85&fit=crop"
+              alt="Arhitektura Urban Construction"
+              class="about__image"
+              loading="lazy"
+            >
+            <div class="about__image-border"></div>
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-year">2011</span>
+            <span class="about__badge-text">Osnovano</span>
+          </div>
+          <div class="about__accent-line"></div>
+        </div>
+
+        <div class="about__content">
+          <div class="section-label reveal-item">O Nama</div>
+          <h2 class="section-title reveal-item">Gde Vizija Susreće <em>Preciznost</em></h2>
+
+          <p class="about__text reveal-item">
+            Već više od 13 godina, Urban Construction isporučuje izuzetne prostore u stambenom, komercijalnom i hotelijerskom sektoru — od Beograda do Atine i Jadranskog primorja.
+          </p>
+          <p class="about__text reveal-item">
+            Naš tim donosi međunarodna stručna znanja i iskustvo u primeni globalnih trendova, garantujući partnerski pristup i vrhunski kvalitet na svakom projektu koji preduzmemo.
+          </p>
+
+          <div class="about__facts reveal-item">
+            <div class="about__fact">
+              <span class="about__fact-value">13+</span>
+              <span class="about__fact-label">Godina Iskustva</span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-value">3</span>
+              <span class="about__fact-label">Međunarodne Nagrade</span>
+            </div>
+            <div class="about__fact">
+              <span class="about__fact-value">100+</span>
+              <span class="about__fact-label">Realizovanih Projekata</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="services__header">
+        <div class="section-label reveal-item">Šta Radimo</div>
+        <h2 class="section-title reveal-item">Naše <em>Usluge</em></h2>
+        <p class="services__intro reveal-item">Kompletan spektar gradjevinskih i inžinjerskih usluga — od ideje do ključa u ruci.</p>
+      </div>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="service-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15" data-tilt-perspective="1200">
+        <div class="service-card__number">01</div>
+        <div class="service-card__icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="4" y="4" width="36" height="36" rx="1"/>
+            <path d="M4 16h36M16 4v36"/>
+            <path d="M22 22l6 6M22 22l-6 6M22 22V10"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Kompletni Ključ u Ruke</h3>
+        <p class="service-card__desc">Kompletni završni radovi od A do Ž — koordinacija projekta, premium materijali i besprekorna izvedba.</p>
+        <div class="service-card__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15" data-tilt-perspective="1200">
+        <div class="service-card__number">02</div>
+        <div class="service-card__icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="6" y="14" width="32" height="26" rx="1"/>
+            <path d="M14 14V8a2 2 0 012-2h12a2 2 0 012 2v6"/>
+            <path d="M22 22v10M17 27h10"/>
+            <path d="M32 6l6 6M32 12l6-6"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Adaptacija i Rekonstrukcija</h3>
+        <p class="service-card__desc">Transformišemo stare prostore u moderne, funkcionalne ambijente koji odražavaju vaš identitet i stil.</p>
+        <div class="service-card__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15" data-tilt-perspective="1200">
+        <div class="service-card__number">03</div>
+        <div class="service-card__icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M4 38h36"/>
+            <rect x="10" y="20" width="10" height="18"/>
+            <rect x="24" y="12" width="10" height="26"/>
+            <path d="M14 20V12l5-8 5 8v8"/>
+            <path d="M6 20h32"/>
+            <line x1="22" y1="4" x2="22" y2="12"/>
+            <line x1="18" y1="8" x2="26" y2="8"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Stambena i Industrijska Gradnja</h3>
+        <p class="service-card__desc">Od porodičnih kuća do industrijskih kompleksa — gradimo sa preciznošću i poštovanjem rokova.</p>
+        <div class="service-card__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="service-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15" data-tilt-perspective="1200">
+        <div class="service-card__number">04</div>
+        <div class="service-card__icon">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="8" y="6" width="22" height="30" rx="1"/>
+            <path d="M14 14h10M14 20h10M14 26h6"/>
+            <circle cx="34" cy="34" r="6"/>
+            <path d="M31 34l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Stručni Nadzor i Upravljanje</h3>
+        <p class="service-card__desc">Profesionalni nadzor izgradnje i upravljanje projektima koji osiguravaju kvalitet, rokove i budžet.</p>
+        <div class="service-card__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STATS
+  ═══════════════════════════════════════ -->
+  <section class="stats section" id="stats">
+    <div class="stats__bg-text" aria-hidden="true">EXCELLENCE</div>
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat-item">
+          <div class="stat-item__inner">
+            <span class="stat-item__value" data-count="13">0</span>
+            <span class="stat-item__suffix">+</span>
+          </div>
+          <span class="stat-item__label">Godina Iskustva</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__inner">
+            <span class="stat-item__value" data-count="100">0</span>
+            <span class="stat-item__suffix">+</span>
+          </div>
+          <span class="stat-item__label">Realizovanih Projekata</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__inner">
+            <span class="stat-item__value" data-count="3">0</span>
+            <span class="stat-item__suffix"></span>
+          </div>
+          <span class="stat-item__label">Međunarodne Nagrade</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__inner">
+            <span class="stat-item__value" data-count="4">0</span>
+            <span class="stat-item__suffix"></span>
+          </div>
+          <span class="stat-item__label">Zemlja Prisutnosti</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PORTFOLIO
+  ═══════════════════════════════════════ -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="portfolio__header">
+        <div class="section-label reveal-item">Naš Rad</div>
+        <h2 class="section-title reveal-item">Istaknuti <em>Projekti</em></h2>
+      </div>
+    </div>
+
+    <div class="portfolio__grid">
+
+      <!-- Large card: Apartment A24 -->
+      <div class="portfolio-card portfolio-card--large">
+        <div class="portfolio-card__media">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fit=crop"
+            alt="Apartment A24 — Athens, Greece"
+            loading="lazy"
+          >
+        </div>
+        <div class="portfolio-card__overlay">
+          <div class="portfolio-card__info">
+            <span class="portfolio-card__location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Atina, Grčka
+            </span>
+            <h3 class="portfolio-card__title">Apartment A24</h3>
+            <p class="portfolio-card__awards">
+              <span class="award-badge">A Design Award 2020</span>
+              <span class="award-badge">Big SEE Interior Design Award</span>
+            </p>
+          </div>
+        </div>
+        <div class="portfolio-card__number">01</div>
+      </div>
+
+      <!-- Small card: Bigova Family House -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__media">
+          <img
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=85&fit=crop"
+            alt="Bigova Family House"
+            loading="lazy"
+          >
+        </div>
+        <div class="portfolio-card__overlay">
+          <div class="portfolio-card__info">
+            <span class="portfolio-card__location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bigova, Crna Gora
+            </span>
+            <h3 class="portfolio-card__title">Bigova Family House</h3>
+            <p class="portfolio-card__awards">
+              <span class="award-badge">Kamena Struktura &amp; Moderni Enterijer</span>
+            </p>
+          </div>
+        </div>
+        <div class="portfolio-card__number">02</div>
+      </div>
+
+      <!-- Small card: Hotel Aman -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__media">
+          <img
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=85&fit=crop"
+            alt="Hotel Aman Sveti Stefan"
+            loading="lazy"
+          >
+        </div>
+        <div class="portfolio-card__overlay">
+          <div class="portfolio-card__info">
+            <span class="portfolio-card__location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Sveti Stefan, Srbija
+            </span>
+            <h3 class="portfolio-card__title">Hotel Aman Sveti Stefan</h3>
+            <p class="portfolio-card__awards">
+              <span class="award-badge">Saint-Gobain Rigips Trophy 2011</span>
+            </p>
+          </div>
+        </div>
+        <div class="portfolio-card__number">03</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       AWARDS
+  ═══════════════════════════════════════ -->
+  <section class="awards section" id="awards">
+    <div class="container">
+      <div class="awards__header">
+        <div class="section-label reveal-item">Priznanja</div>
+        <h2 class="section-title reveal-item">Međunarodne <em>Nagrade</em></h2>
+      </div>
+
+      <div class="awards__list">
+
+        <div class="award-item">
+          <div class="award-item__icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M26 6l4.5 9 10 1.5-7.25 7 1.75 10L26 29l-9 4.5 1.75-10L11.5 16.5 21.5 15z"/>
+              <path d="M18 38v8M34 38v8M14 46h24"/>
+            </svg>
+          </div>
+          <div class="award-item__content">
+            <span class="award-item__year">2020</span>
+            <h3 class="award-item__name">A' Design Award</h3>
+            <p class="award-item__project">Apartment A24 &mdash; Atina, Grčka</p>
+          </div>
+          <div class="award-item__line"></div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-item__icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M26 6l4.5 9 10 1.5-7.25 7 1.75 10L26 29l-9 4.5 1.75-10L11.5 16.5 21.5 15z"/>
+              <path d="M18 38v8M34 38v8M14 46h24"/>
+            </svg>
+          </div>
+          <div class="award-item__content">
+            <span class="award-item__year">2020</span>
+            <h3 class="award-item__name">Big SEE Interior Design Award</h3>
+            <p class="award-item__project">Apartment A24 &mdash; Atina, Grčka</p>
+          </div>
+          <div class="award-item__line"></div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-item__icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M26 6l4.5 9 10 1.5-7.25 7 1.75 10L26 29l-9 4.5 1.75-10L11.5 16.5 21.5 15z"/>
+              <path d="M18 38v8M34 38v8M14 46h24"/>
+            </svg>
+          </div>
+          <div class="award-item__content">
+            <span class="award-item__year">2011</span>
+            <h3 class="award-item__name">Saint-Gobain Rigips Trophy</h3>
+            <p class="award-item__project">Hotel Aman &mdash; Sveti Stefan, Srbija</p>
+          </div>
+          <div class="award-item__line"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PHILOSOPHY (Full-Width Cinematic)
+  ═══════════════════════════════════════ -->
+  <section class="philosophy section" id="philosophy">
+    <div class="philosophy__bg">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1800&q=85&fit=crop"
+        alt=""
+        aria-hidden="true"
+        class="philosophy__bg-image"
+        loading="lazy"
+      >
+      <div class="philosophy__bg-overlay"></div>
+    </div>
+    <div class="philosophy__content">
+      <div class="philosophy__quote-mark" aria-hidden="true">"</div>
+      <blockquote class="philosophy__quote" id="philosophyQuote">
+        Ne gradimo objekte. Gradimo prostore u kojima se životi odvijaju.
+      </blockquote>
+      <cite class="philosophy__cite">— Urban Construction, Beograd</cite>
+      <div class="philosophy__gold-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+
+        <div class="contact__info">
+          <div class="section-label reveal-item">Kontaktirajte Nas</div>
+          <h2 class="section-title reveal-item">Izgradimo <em>Zajedno</em></h2>
+          <p class="contact__intro reveal-item">Svaki veliki projekat počinje razgovorom. Kontaktirajte nas i saznajte kako možemo transformisati vašu viziju u stvarnost.</p>
+
+          <div class="contact__details">
+            <div class="contact__detail reveal-item">
+              <div class="contact__detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__detail-label">Adresa</span>
+                <span class="contact__detail-value">Smiljanićeva 27, Vračar, Beograd</span>
+              </div>
+            </div>
+
+            <div class="contact__detail reveal-item">
+              <div class="contact__detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.61-.61a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0120.92 16z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__detail-label">Telefon</span>
+                <a href="tel:+381632080060" class="contact__detail-value contact__detail-value--link">+381 63 20 80 60</a>
+              </div>
+            </div>
+
+            <div class="contact__detail reveal-item">
+              <div class="contact__detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__detail-label">E-mail</span>
+                <a href="mailto:urbanconstructiondoo@gmail.com" class="contact__detail-value contact__detail-value--link">urbanconstructiondoo@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form reveal-item" id="contactForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="fname" name="name" placeholder=" " required autocomplete="name">
+            <label for="fname">Vaše Ime</label>
+            <div class="form-group__line"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="femail" name="email" placeholder=" " required autocomplete="email">
+            <label for="femail">E-mail Adresa</label>
+            <div class="form-group__line"></div>
+          </div>
+
+          <div class="form-group form-group--select">
+            <select id="fservice" name="service" required>
+              <option value="" disabled selected></option>
+              <option value="turnkey">Kompletni Ključ u Ruke</option>
+              <option value="adaptation">Adaptacija / Rekonstrukcija</option>
+              <option value="construction">Stambena / Industrijska Gradnja</option>
+              <option value="supervision">Stručni Nadzor i Upravljanje</option>
+            </select>
+            <label for="fservice">Vrsta Usluge</label>
+            <div class="form-group__line"></div>
+            <svg class="form-group__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+
+          <div class="form-group">
+            <textarea id="fmessage" name="message" placeholder=" " rows="4" required></textarea>
+            <label for="fmessage">Vaša Poruka</label>
+            <div class="form-group__line"></div>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+            <span class="btn__text">Pošaljite Poruku</span>
+            <div class="btn__loader" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <p class="form-success" id="formSuccess" aria-live="polite">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Poruka uspešno poslata! Javićemo se u roku od 24h.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">URBAN CONSTRUCTION</span>
+          <p class="footer__tagline">Spoj ljudi i ideja</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigacija">
+          <a href="#about">O Nama</a>
+          <a href="#services">Usluge</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#awards">Nagrade</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+      </div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <span>&copy; 2024 Urban Construction d.o.o. Sva prava zadržana.</span>
+        <span>Smiljanićeva 27, Vračar, Beograd</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
